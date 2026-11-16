@@ -4,7 +4,7 @@
     Assignment: Module 8 Applied Programming Activity
     File: calculations.js
 */
-
+/*
 "use strict";
 
 import { courseModules } from "./data.js";
@@ -91,3 +91,5 @@ export const getStudyPlan = (studyDay) => {
 
   return studyPlan;
 };
+
+*/

@@ -5,7 +5,7 @@
     File: dashboard.js
 */
 
-"use strict";
+/* "use strict";
 
 import { courseModules } from "./data.js";
 
@@ -124,3 +124,5 @@ export const displayDashboard = (
     </div>
   `;
 };
+
+*/

@@ -5,6 +5,8 @@
     File: validators.js
 */
 
+/*
+
 "use strict";
 
 import {
@@ -124,3 +126,5 @@ export const runUnitTests = () => {
   console.log("Tests passed:", passedTests);
   console.log("Tests failed:", failedTests);
 };
+
+*/

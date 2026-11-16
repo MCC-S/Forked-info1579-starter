@@ -5,6 +5,8 @@
     File: api.js
 */
 
+/*
+
 "use strict";
 
 // Joke and Quote DOM Elements
@@ -109,3 +111,5 @@ export const displayQuote = async () => {
     console.error("Error loading quote:", error);
   }
 };
+
+*/
