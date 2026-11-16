@@ -14,8 +14,7 @@ const dashboardForm = document.getElementById("dashboardForm");
 
 const studentNameInput = document.getElementById("studentName");
 
-const completedModulesInput =
-  document.getElementById("completedModules");
+const completedModulesInput = document.getElementById("completedModules");
 
 const studyDayInput = document.getElementById("studyDay");
 
@@ -26,26 +25,24 @@ const output = document.getElementById("output");
 // Part 3: Array Iterator Methods
 
 // Use map() to Get All Career Names
-const careerNames = careerPaths.map(
-  (career) => career.name
-);
+const careerNames = careerPaths.map((career) => career.name);
 
 console.log("Career Path Names:", careerNames);
 
 // Use filter() to Get Careers With More Than 4 Resources
 const careersWithMoreResources = careerPaths.filter(
-  (career) => career.resources.length > 4
+  (career) => career.resources.length > 4,
 );
 
 console.log(
   "Career Paths With More Than 4 Resources:",
-  careersWithMoreResources
+  careersWithMoreResources,
 );
 
 // Use reduce() to Calculate Total Skills
 const totalSkills = careerPaths.reduce(
   (total, career) => total + career.skills.length,
-  0
+  0,
 );
 
 console.log("Total Career Skills:", totalSkills);
@@ -58,9 +55,7 @@ const generateDashboard = (event) => {
     // Get User Information
     const studentName = studentNameInput.value.trim();
 
-    const completedModules = Number(
-      completedModulesInput.value
-    );
+    const completedModules = Number(completedModulesInput.value);
 
     const studyDay = studyDayInput.value;
 
@@ -79,7 +74,7 @@ const generateDashboard = (event) => {
       completedModules > courseModules.length
     ) {
       throw new Error(
-        "Please enter a valid number of completed modules between 0 and 10."
+        "Please enter a valid number of completed modules between 0 and 10.",
       );
     }
 
@@ -94,35 +89,31 @@ const generateDashboard = (event) => {
     }
 
     // Find Selected Career
-    const career = careerPaths.find(
-      (item) => item.name === selectedCareer
-    );
+    const career = careerPaths.find((item) => item.name === selectedCareer);
 
     // Calculate Remaining Modules Using filter()
     const remainingModules = courseModules.filter(
-      (module, index) => index >= completedModules
+      (module, index) => index >= completedModules,
     );
 
     // Get Module Names Using map()
-    const moduleNames = courseModules.map(
-      (module) => module.moduleName
-    );
+    const moduleNames = courseModules.map((module) => module.moduleName);
 
     // Calculate Remaining Study Hours Using reduce()
     const remainingHours = remainingModules.reduce(
       (total, module) => total + module.hoursRequired,
-      0
+      0,
     );
 
     // Calculate Total Study Hours
     const totalStudyHours = courseModules.reduce(
       (total, module) => total + module.hoursRequired,
-      0
+      0,
     );
 
     // Calculate Progress
     const percentComplete = Math.round(
-      (completedModules / courseModules.length) * 100
+      (completedModules / courseModules.length) * 100,
     );
 
     const percentRemaining = 100 - percentComplete;
@@ -130,9 +121,7 @@ const generateDashboard = (event) => {
     // Calculate Study Time
     const dailyStudyHours = totalStudyHours / 7;
 
-    const dailyStudyMinutes = Math.round(
-      dailyStudyHours * 60
-    );
+    const dailyStudyMinutes = Math.round(dailyStudyHours * 60);
 
     // Determine Grade
     let grade;
@@ -203,29 +192,26 @@ const generateDashboard = (event) => {
       <div class="dashboard-card">
         <h3>Career Skills: ${career.name}</h3>
         <ul>
-          ${career.skills.map(
-            (skill) => `<li>${skill}</li>`
-          ).join("")}
+          ${career.skills.map((skill) => `<li>${skill}</li>`).join("")}
         </ul>
       </div>
 
       <div class="dashboard-card">
         <h3>Career Learning Resources</h3>
         <ul>
-          ${career.resources.map(
-            (resource) => `<li>${resource}</li>`
-          ).join("")}
+          ${career.resources.map((resource) => `<li>${resource}</li>`).join("")}
         </ul>
       </div>
 
       <div class="dashboard-card">
         <h3>Remaining Modules</h3>
         <ul>
-          ${remainingModules.length > 0
-            ? remainingModules.map(
-                (module) => `<li>${module.moduleName}</li>`
-              ).join("")
-            : "<li>All modules completed!</li>"
+          ${
+            remainingModules.length > 0
+              ? remainingModules
+                  .map((module) => `<li>${module.moduleName}</li>`)
+                  .join("")
+              : "<li>All modules completed!</li>"
           }
         </ul>
       </div>
@@ -239,7 +225,6 @@ const generateDashboard = (event) => {
     } else {
       output.style.borderLeft = "6px solid #0b77be";
     }
-
   } catch (error) {
     output.style.backgroundColor = "#f8d7da";
     output.style.borderLeft = "6px solid #dc3545";
@@ -254,10 +239,7 @@ const generateDashboard = (event) => {
 };
 
 // Submit Dashboard Form
-dashboardForm.addEventListener(
-  "submit",
-  generateDashboard
-);
+dashboardForm.addEventListener("submit", generateDashboard);
 
 // Reset Dashboard
 dashboardForm.addEventListener("reset", () => {

@@ -17,7 +17,7 @@ export const careerPaths = [
       "Java",
       "Problem Solving",
       "Object-Oriented Programming",
-      "Git and GitHub"
+      "Git and GitHub",
     ],
 
     resources: [
@@ -25,8 +25,8 @@ export const careerPaths = [
       "The Odin Project",
       "MDN Web Docs",
       "Codecademy",
-      "CS50 by Harvard"
-    ]
+      "CS50 by Harvard",
+    ],
   },
 
   {
@@ -37,34 +37,29 @@ export const careerPaths = [
       "CSS",
       "JavaScript",
       "Responsive Web Design",
-      "Git and GitHub"
+      "Git and GitHub",
     ],
 
     resources: [
       "freeCodeCamp",
       "MDN Web Docs",
       "W3Schools",
-      "The Odin Project"
-    ]
+      "The Odin Project",
+    ],
   },
 
   {
     name: "Game Developer",
 
-    skills: [
-      "C#",
-      "Unity",
-      "Game Design",
-      "Problem Solving"
-    ],
+    skills: ["C#", "Unity", "Game Design", "Problem Solving"],
 
     resources: [
       "Unity Learn",
       "Unreal Engine Learning",
       "GameDev.tv",
-      "Coursera"
-    ]
-  }
+      "Coursera",
+    ],
+  },
 ];
 
 // Course Modules for the Study Dashboard
@@ -78,5 +73,5 @@ export const courseModules = [
   { moduleName: "Module 7", hoursRequired: 4 },
   { moduleName: "Module 8", hoursRequired: 3 },
   { moduleName: "Module 9", hoursRequired: 4 },
-  { moduleName: "Module 10", hoursRequired: 3 }
+  { moduleName: "Module 10", hoursRequired: 3 },
 ];

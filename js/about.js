@@ -15,19 +15,9 @@ const aboutMeObject = {
 
   currentJob: "High school software developer",
 
-  hobbies: [
-    "Walk",
-    "Run",
-    "Basketball"
-  ],
+  hobbies: ["Walk", "Run", "Basketball"],
 
-  skills: [
-    "HTML",
-    "CSS",
-    "JavaScript",
-    "Java",
-    "C#"
-  ]
+  skills: ["HTML", "CSS", "JavaScript", "Java", "C#"],
 };
 
 // Get HTML Elements Using DOM IDs
@@ -35,17 +25,13 @@ const nameElement = document.getElementById("name");
 
 const majorElement = document.getElementById("major");
 
-const currentJobElement =
-  document.getElementById("currentJob");
+const currentJobElement = document.getElementById("currentJob");
 
-const hobbiesElement =
-  document.getElementById("hobbies");
+const hobbiesElement = document.getElementById("hobbies");
 
-const skillsElement =
-  document.getElementById("skills");
+const skillsElement = document.getElementById("skills");
 
-const jokeContainer =
-  document.getElementById("jokeContainer");
+const jokeContainer = document.getElementById("jokeContainer");
 
 // Display Personal Information Using innerHTML
 nameElement.innerHTML = `
@@ -61,14 +47,14 @@ currentJobElement.innerHTML = `
 `;
 
 // Use map() to Display Hobbies
-hobbiesElement.innerHTML = aboutMeObject.hobbies.map(
-  (hobby) => `<li>${hobby}</li>`
-).join("");
+hobbiesElement.innerHTML = aboutMeObject.hobbies
+  .map((hobby) => `<li>${hobby}</li>`)
+  .join("");
 
 // Use map() to Display Technical Skills
-skillsElement.innerHTML = aboutMeObject.skills.map(
-  (skill) => `<li>${skill}</li>`
-).join("");
+skillsElement.innerHTML = aboutMeObject.skills
+  .map((skill) => `<li>${skill}</li>`)
+  .join("");
 
 // Move Joke Feature to About Me Page
 const jokes = [
@@ -76,13 +62,11 @@ const jokes = [
 
   "Why did the computer go to the doctor? Because it had a virus!",
 
-  "Why do JavaScript developers wear glasses? Because they cannot C#!"
+  "Why do JavaScript developers wear glasses? Because they cannot C#!",
 ];
 
 // Select a Random Joke
-const randomIndex = Math.floor(
-  Math.random() * jokes.length
-);
+const randomIndex = Math.floor(Math.random() * jokes.length);
 
 jokeContainer.innerHTML = `
   <p>${jokes[randomIndex]}</p>
